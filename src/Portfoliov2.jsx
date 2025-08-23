@@ -25,15 +25,19 @@ function App() {
       });
     });
 
-    // Fade-in animation
+    // Slide/Fade animations
     const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
       });
     }, observerOptions);
 
-    document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+    document.querySelectorAll(".fade-in, .slide-left, .slide-right").forEach(el => observer.observe(el));
+
 
     // Active nav highlight
     const handleScroll = () => {
@@ -106,12 +110,12 @@ function App() {
       </section>
 
       {/* About */}
-      <section id="about" className="about fade-in">
+      <section id="about" className="about">
         <div className="container about-grid">
-          <div className="about-image">
+          <div className="about-image slide-right">
             <img src={AboutMeIMG} alt="About Me Picture Portrait" />
           </div>
-          <div>
+          <div className="slide-left">
             <h2 className="aboutme-title">About Me</h2>
             <p className="aboutme-sub">
               I'm a passionate web designer and developer game developer to 
@@ -143,6 +147,7 @@ function App() {
         <p>&copy; {new Date().getFullYear()} Kurt Rion Portfolio</p>
       </footer>
     </div>
+    
     </div>
   )
 }

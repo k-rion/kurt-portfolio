@@ -7,6 +7,43 @@ html,
   color: #333;
 }
 
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f9fbff;
+  color: #333;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 131, 246, 0.2);
+  border-radius: 50%;
+  animation: float 12s ease-in-out infinite;
+}
+
+body::after {
+  width: 300px;
+  height: 300px;
+  left: 60%;
+  top: 20%;
+  background: rgba(59, 131, 246, 0.15);
+  animation-duration: 18s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-60px) translateX(30px);
+  }
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -119,13 +156,31 @@ html,
 }
 
 /* About Section */
+
 .about {
   display: flex;
   align-items: center;
   max-width: 1100px;
   justify-content: center;
   margin: auto;
+
+  background: linear-gradient(135deg, #f9fafb, #e3f2fd);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
 }
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -187,7 +242,7 @@ section {
   text-align: center;
 }
 
-/* Animation Fade In */
+/* Animations */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -196,6 +251,24 @@ section {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+.slide-left {
+  opacity: 0;
+  transform: translateX(100px); /* Start shifted to the right */
+  transition: all 0.8s ease-out;
+}
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0); /* Slide into place */
+}
+.slide-right {
+  opacity: 0;
+  transform: translateX(-100px); /* Start shifted to the right */
+  transition: all 0.8s ease-out;
+}
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0); /* Slide into place */
 }
 
 /* Footer */

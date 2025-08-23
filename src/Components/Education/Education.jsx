@@ -4,7 +4,7 @@ import "./Education.css";
 function Education() {
   return (
     <section id="education" className="education-section">
-      <div className="container">
+      <div className="container fade-in">
         <div className="section-header">
           <h2>Education & Background</h2>
           <p>My academic journey and professional development</p>
