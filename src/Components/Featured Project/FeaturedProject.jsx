@@ -36,7 +36,7 @@ function FeaturedProject() {
     },
     // Steal and Stealth Project Section
     {
-      icon: "/Project2_StealAndStealth/Screenshot 2025-06-25 073038.png",
+      icon: "/Project2_StealAndStealth/Screenshot_2025-06-25_073038.png",
       title: "Stealth & Steal (Internship Project)",
       description:
         "Designing engaging game worlds with intuitive UI, creative level layouts, smooth character animations, and interactive scripts.",
@@ -45,9 +45,9 @@ function FeaturedProject() {
       showcaseImages: [
         "/Project2_StealAndStealth/1.png",
         "/Project2_StealAndStealth/2.png",
-        "/Project2_StealAndStealth/Saturday GameDev Designing Level 2.png",
-        "/Project2_StealAndStealth/Thursday Game Dev.png",
-        "/Project2_StealAndStealth/Tuesday GameDev 4.png",
+        "/Project2_StealAndStealth/Saturday_GameDev_Designing_Level2.png",
+        "/Project2_StealAndStealth/Thursday_GameDev.png",
+        "/Project2_StealAndStealth/Tuesday_GameDev4.png",
       ],
 
       features: [
