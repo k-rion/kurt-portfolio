@@ -114,8 +114,20 @@ function FeaturedProject() {
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
-
   const closeModal = () => setSelectedProject(null);
+
+
+    const [zoomedImage, setIsZoomed] = useState(false);
+    const handleImageCLick = (img) => {
+        setIsZoomed(img);
+    }
+    const handleImageClose = () => {
+        setIsZoomed(null);
+    }
+    const handleClose = () => {
+    setIsZoomed(null);
+    };
+
 
   return (
     <section id="projects" className="projects fade-in">
@@ -207,7 +219,13 @@ function FeaturedProject() {
                 <div className="showcase-grid">
                   {/* Add images if available */}
                   {selectedProject.showcaseImages?.map((img, i) => (
-                     <img key={i} src={img} alt={`Project Showcase ${i + 1}`} />
+                     <img 
+                     className="showcase-img"
+                     key={i} 
+                    onClick={() => handleImageCLick(img)}
+                     src={img} 
+                     alt={`Project Showcase ${i + 1}`} 
+                     />
                   ))}
                 </div>
               </div>
@@ -258,6 +276,21 @@ function FeaturedProject() {
             </div>
           </div>
         )}
+
+
+        {zoomedImage && (
+          <div 
+          className="overlay"
+          onClick={handleImageClose}
+          >
+              <button className="zoomed-close-btn" onClick={handleClose}>
+            ✕
+          </button>
+            <img src={zoomedImage} alt="Zoomed" className="zoomed-image"/>
+
+          </div>
+        )} 
+
       </div>
     </section>
   );
