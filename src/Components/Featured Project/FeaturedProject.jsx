@@ -1,21 +1,41 @@
 import React, { useState } from "react";
 import "./FeaturedProject.css";
 
+// imported pictures (CLickNcart)
+import clickncart1 from "../../ClickNcartProject/clickncart1.png"
+import clickncart2 from "../../ClickNcartProject/clickncart2.png"
+import clickncart3 from "../../ClickNcartProject/clickncart3.png"
+import clickncart4 from "../../ClickNcartProject/clickncart4.png"
+import clickncart5 from "../../ClickNcartProject/clickncart5.png"
+
+// imported pictures (Symposium)
+import symposium1 from "../../Project1_Symposium/Hello_World.png"
+import symposium2 from "../../Project1_Symposium/Symposium.jpg"
+import symposium3 from "../../Project1_Symposium/Symposium2.jpg"
+import symposium4 from "../../Project1_Symposium/Symposium3.jpg"
+import symposium5 from "../../Project1_Symposium/Symposium4.jpg"
+
+// imported pictures (Stealth and Steal)
+import SAS from "../../Project2_StealAndStealth/Screenshot_2025-06-25_073038.png.png"
+import SAS1 from "../../Project2_StealAndStealth/1.png"
+import SAS2 from "../../Project2_StealAndStealth/2.png"
+import SAS3 from "../../Project2_StealAndStealth/3.png"
+import SAS4 from "../../Project2_StealAndStealth/Saturday_GameDev_Designing_Level2.png"
+import SAS5 from "../../Project2_StealAndStealth/Thursday_GameDev.png"
+import SAS6 from "../../Project2_StealAndStealth/Tuesday_GameDev4.png"
+
 function FeaturedProject() {
   const projects = [
       // ClickNcart Project
     {
-      icon: "/ClickNcartProject/clickncart1.png",
+      icon: clickncart1,
       title: "ClickNcart (First Web Project)",
       description:
         "Modern shopping experience with clean UI and seamless checkout process.",
       longDescription:
         "A comprehensive e-commerce solution built with modern web technologies. This platform features a clean, intuitive interface that makes online shopping effortless for users while providing powerful management tools for administrators.",
       showcaseImages: [
-      "/ClickNcartProject/clickncart2.png",
-      "/ClickNcartProject/clickncart3.png",
-      "/ClickNcartProject/clickncart4.png",
-      "/ClickNcartProject/clickncart5.png",
+        clickncart2, clickncart3, clickncart4, clickncart5
       ],
       title2_sub:
         "This project features a user-friendly interface for an e-commerce platform, designed to deliver a smooth and enjoyable shopping experience. The clean and minimalist layout helps users focus on products without unnecessary distractions. With intuitive navigation and clear product displays, it ensures convenience and efficiency for customers. Overall, the design enhances engagement while maintaining a modern and professional look.",
@@ -36,18 +56,14 @@ function FeaturedProject() {
     },
     // Steal and Stealth Project Section
     {
-      icon: "/Project2_StealAndStealth/Screenshot_2025-06-25_073038.png",
+      icon: SAS,
       title: "Stealth & Steal (Internship Project)",
       description:
         "Designing engaging game worlds with intuitive UI, creative level layouts, smooth character animations, and interactive scripts.",
       longDescription:
         "Game development involves planning, designing mechanics and art, developing systems, testing, publishing, and ongoing support.",
       showcaseImages: [
-        "/Project2_StealAndStealth/1.png",
-        "/Project2_StealAndStealth/2.png",
-        "/Project2_StealAndStealth/Saturday_GameDev_Designing_Level2.png",
-        "/Project2_StealAndStealth/Thursday_GameDev.png",
-        "/Project2_StealAndStealth/Tuesday_GameDev4.png",
+       SAS1, SAS2, SAS3, SAS4, SAS5, SAS6,
       ],
 
       features: [
@@ -69,17 +85,14 @@ function FeaturedProject() {
     
     //Hello World Project Section
     {
-      icon: "/Project1_Symposium/Hello World.png",
+      icon: symposium1,
       title: "Hello World (Capstone Project)",
       description:
         "Responsive portfolio showcasing creative work with smooth animations.",
       longDescription:
         "Built with advanced CSS animations, modern design principles and SEO optimization.",
       showcaseImages: [
-        "/Project1_Symposium/Symposium.jpg",
-        "/Project1_Symposium/Symposium2.jpg",
-        "/Project1_Symposium/Symposium3.jpg",
-        "/Project1_Symposium/Symposium4.jpg",
+         symposium2, symposium3, symposium4, symposium5
       ],
       features: [
         "Responsive Design",
