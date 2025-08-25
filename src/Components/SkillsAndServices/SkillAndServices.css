@@ -16,7 +16,6 @@
   max-width: 1200px;
 }
 .skill-card {
-  background: #fff;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

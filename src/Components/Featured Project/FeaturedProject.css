@@ -101,7 +101,7 @@
   font-weight: 600;
   color: #fff;
   margin-top: 8px;
-  width: 80px;
+  width: 95px;
   border-radius: 69% 31% 75% 25% / 0% 95% 5% 100%;
 }
 
@@ -443,7 +443,7 @@ ul li span {
 
   .project-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .project-card {
