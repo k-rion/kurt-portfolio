@@ -1,16 +1,18 @@
 /* Projects Section */
 .projects {
   padding: 10rem 2rem;
+  background: var(--bg);
 }
 .project-title {
   font-size: 2.5rem;
   font-weight: 100;
   margin: auto;
   font-family: sans-serif;
+  color: var(--text);
 }
 .project-sub {
   font-size: 1rem;
-  color: #555;
+  color: var(--muted);
   line-height: 2rem;
   margin: auto;
 }
@@ -28,7 +30,7 @@
   max-width: 1200px;
 }
 .project-card {
-  background: #fff;
+  background: var(--surface);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -69,9 +71,10 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
+  color: var(--text);
 }
 .project-content p {
-  color: #555;
+  color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.5rem;
   margin-bottom: 1rem;
@@ -86,8 +89,8 @@
 }
 
 .project-tags span {
-  background: #f3f4f6;
-  color: #444;
+  background: var(--border);
+  color: var(--text);
   font-size: 0.8rem;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
@@ -152,7 +155,7 @@
 }
 
 .modal-content {
-  background: #fff;
+  background: var(--surface);
   padding: 1.75rem;
   border-radius: 12px;
   max-width: 800px;
@@ -191,7 +194,7 @@
 
 .modal-sub {
   font-size: 1rem;
-  color: #555;
+  color: var(--muted);
   margin-bottom: 1.5rem;
   text-align: start;
   line-height: 1.8rem;
@@ -210,7 +213,7 @@
 
 .showcase-grid img {
   max-width: 200px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
 }
@@ -238,7 +241,7 @@ ul {
 
 ul li {
   margin-bottom: 0.5rem;
-  color: #000;
+  color: var(--text);
 }
 
 ul li span {
@@ -255,7 +258,7 @@ ul li span {
 }
 
 .span-tag {
-  background: #f3f4f6;
+  background: var(--border);
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -297,11 +300,11 @@ ul li span {
   background: transparent;
   border: none;
   font-size: 0.95rem;
-  color: #2563eb;
+  color: var(--primary);
   cursor: pointer;
 }
 .close-btn:hover {
-  color: #000;
+  color: var(--text);
 }
 .close-btn i {
   margin-right: 10px;
@@ -316,7 +319,7 @@ ul li span {
 }
 
 .span-tag {
-  background: #f3f4f6;
+  background: var(--border);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 0.9rem;

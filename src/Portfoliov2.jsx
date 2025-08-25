@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './Portfoliov2.css'
 
 //import image
 import MyPhoto from "../public/My Photo/MyPic.jpeg"
-import Logo from "../public/My Photo/K-removebg-preview.png"
+import LogoLight from "../public/My Photo/K-removebg-preview.png"
+import LogoDark from "../public/My Photo/K__1_-removebg-preview.png" 
 import AboutMeIMG from "../public/My Photo/1000115656.jpg"
 import FeaturedProject from "./Components/Featured Project/FeaturedProject";
 import SkillAndServices from "./Components/SkillsAndServices/SkillAndServices";
@@ -62,6 +63,26 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Toggle Light and Dark
+  const [darkMode, setDarkMode] = useState();
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem("themen", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  // Load saved theme when app starts 
+   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+    }
+  }, []);
 
   return (
     <div>
@@ -70,8 +91,15 @@ function App() {
       <nav className="navbar">
         <div className="container nav-content">
           <div className="logo">
-            <a href="/"><img src={Logo} alt="My Logo" /></a>
+            <a href="/">
+              <img 
+                src={darkMode ? LogoDark : LogoLight} 
+                alt="My Logo" 
+                className="logo-image"
+              />
+            </a>
           </div>
+
           <div className="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -80,6 +108,18 @@ function App() {
             <a href="#contact">Contact</a>
           </div>
         </div>
+
+        {/* Dark Mode Toggle */}
+          <div className="theme-toggle">
+            <button 
+              onClick={() => setDarkMode(!darkMode)}
+              style={{
+              padding: "10px 20px",
+              borderRadius: "8px",
+              cursor: "pointer",
+              }}
+              ><i className="fa-solid fa-toggle-on"></i></button>
+          </div>
       </nav>
 
       {/* Hero */}
@@ -131,16 +171,16 @@ function App() {
       </section>
 
       {/* Education */}
-      <Education/>
+      <Education darkMode={darkMode}/>
 
       {/* Projects */}
-      <FeaturedProject/>
+      <FeaturedProject darkMode={darkMode}/>
 
       {/* Skills */}
-      <SkillAndServices/>
+      <SkillAndServices darkMode={darkMode}/>
 
       {/* Contact */}
-      <Contact/>
+      <Contact darkMode={darkMode}/>
 
       {/* Footer */}
       <footer className="footer">
