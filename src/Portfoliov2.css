@@ -14,6 +14,7 @@
   --primary: #3b82f6;
   --primary-hover: #2563eb;
   --border: #eee;
+  --nav-height: 72px;
 }
 
 body.dark {
@@ -40,14 +41,15 @@ body {
 
 .portfolio {
   background: inherit;
+  padding-top: calc(var(--nav-height));
 }
 
 /* NAVBAR */
-
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
+  height: var(--nav-height);
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   padding: 1rem 2rem;
@@ -57,11 +59,21 @@ body {
   width: 50px;
 }
 .nav-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   max-width: 1200px;
   margin: auto;
+  padding: 0 1rem;
+}
+.nav-left {
+  justify-self: start;
+}
+.nav-right {
+  justify-self: end;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
 }
 .nav-links a {
   margin-left: 1.5rem;
@@ -69,23 +81,50 @@ body {
   text-decoration: none;
   transition: color 0.3s;
 }
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active,
+.nav-links a:hover {
   color: var(--primary);
 }
 
-.theme
+.nav-links a.active::after {
+  content: "";
+  display: inline-block;
+  height: 3px;
+  width: 28px;
+  background: var(--primary);
+  border-radius: 2px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* theme toggle styles */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.theme-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+}
+.theme-btn:hover {
+  color: var(--primary);
+}
 
 /* HERO */
-
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding-top: 5rem;
-  max-width: 1100px;
+  max-width: 1200px;
   justify-content: center;
   margin: auto;
+  margin-bottom: 5rem;
 }
 .hero-grid {
   display: grid;
@@ -166,11 +205,12 @@ body.dark .hero-image {
 .about {
   display: flex;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1200px;
   justify-content: center;
   margin: auto;
   background: linear-gradient(135deg, #f9fafb, #e3f2fd);
   background-size: 200% 200%;
+  border-radius: 20px;
   animation: gradientShift 12s ease infinite;
 }
 body.dark .about {

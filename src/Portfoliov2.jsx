@@ -40,86 +40,91 @@ function App() {
     document.querySelectorAll(".fade-in, .slide-left, .slide-right").forEach(el => observer.observe(el));
 
 
-    // Active nav highlight
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("nav a[href^='#']");
-      let current = "";
+      // Active nav highlight
+      const handleScroll = () => {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll("nav a[href^='#']");
+        const navbar = document.querySelector(".nav-right a");
+        const navHeight = navbar ? navbar.offsetHeight : 0;
+        let current = "";
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) current = section.getAttribute("id");
-      });
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - navHeight - 10;
+          if (window.scrollY >= sectionTop) current = section.getAttribute("id");
+        });
 
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
-      });
-    };
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      window.addEventListener("scroll", handleScroll);
+      handleScroll();
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-  // Toggle Light and Dark
-  const [darkMode, setDarkMode] = useState();
+    // Toggle Light and Dark
+    const [darkMode, setDarkMode] = useState();
 
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-      localStorage.setItem("themen", "dark");
-    } else {
-      document.body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
+    useEffect(() => {
+      if (darkMode) {
+        document.body.classList.add("dark");
+        localStorage.setItem("themen", "dark");
+      } else {
+        document.body.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+    }, [darkMode]);
 
-  // Load saved theme when app starts 
-   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-    }
-  }, []);
+    // Load saved theme when app starts 
+    useEffect(() => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        setDarkMode(true);
+      }
+    }, []);
 
   return (
     <div>
       <div className="portfolio">
       {/* Navigation */}
-      <nav className="navbar">
+        <nav className="navbar">
         <div className="container nav-content">
           <div className="logo">
-            <a href="/">
+            <div className="nav-left">
+              <a href="/">
               <img 
                 src={darkMode ? LogoDark : LogoLight} 
                 alt="My Logo" 
                 className="logo-image"
               />
             </a>
+            </div>
           </div>
 
           <div className="nav-links">
+           <div className="nav-right">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
+           </div>
           </div>
-        </div>
 
-        {/* Dark Mode Toggle */}
+          {/* Dark Mode Toggle — moved inside nav-content so it aligns */}
           <div className="theme-toggle">
             <button 
               onClick={() => setDarkMode(!darkMode)}
-              style={{
-              padding: "10px 20px",
-              borderRadius: "8px",
-              cursor: "pointer",
-              }}
-              ><i className="fa-solid fa-toggle-on"></i></button>
+              className="theme-btn"
+              >
+              <i className="fa-solid fa-toggle-on"></i>
+            </button>
           </div>
+        </div>
       </nav>
 
       {/* Hero */}
