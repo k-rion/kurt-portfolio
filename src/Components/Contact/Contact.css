@@ -137,6 +137,28 @@
   transform: translateY(-3px);
 }
 
+/* Cv Button */
+.cv-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.cv-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-5px);
+}
+.cv-btn a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .contact {

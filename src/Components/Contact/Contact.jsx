@@ -104,9 +104,17 @@ function Contact() {
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                 </div>
+
+                  <button className='cv-btn'>
+                    <a 
+                      href="/files/Kurt Rion Aquino CV.pdf" 
+                      download="Kurt Rion Aquino CV.pdf"
+                      title="Download CV"
+                    > Download My CV
+                    </a>
+                </button>
               </div>
             </div>
-
       </section>
     </div>
   )

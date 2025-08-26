@@ -26,12 +26,9 @@
   width: 200px;
   padding: 2rem;
   align-items: center;
-  background: var(--surface);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 .skill-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 .skill-icon {
   padding: 20px;

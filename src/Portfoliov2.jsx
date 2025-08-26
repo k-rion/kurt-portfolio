@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import './Portfoliov2.css'
 
 //import image
-import MyPhoto from "../public/My Photo/MyPic.jpeg"
 import LogoLight from "../public/My Photo/K-removebg-preview.png"
 import LogoDark from "../public/My Photo/K__1_-removebg-preview.png" 
-import AboutMeIMG from "../public/My Photo/1000115656.jpg"
 import FeaturedProject from "./Components/Featured Project/FeaturedProject";
 import SkillAndServices from "./Components/SkillsAndServices/SkillAndServices";
 import Contact from "./Components/Contact/Contact";
 import Typewriter from "./Components/TypeWriter/Typewriter";
 import Education from "./Components/Education/Education";
+
 
 function App() {
 
@@ -67,12 +66,12 @@ function App() {
     }, []);
 
     // Toggle Light and Dark
-    const [darkMode, setDarkMode] = useState();
+    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
       if (darkMode) {
         document.body.classList.add("dark");
-        localStorage.setItem("themen", "dark");
+        localStorage.setItem("theme", "dark");
       } else {
         document.body.classList.remove("dark");
         localStorage.setItem("theme", "light");
@@ -92,38 +91,41 @@ function App() {
       <div className="portfolio">
       {/* Navigation */}
         <nav className="navbar">
-        <div className="container nav-content">
-          <div className="logo">
-            <div className="nav-left">
-              <a href="/">
-              <img 
-                src={darkMode ? LogoDark : LogoLight} 
-                alt="My Logo" 
-                className="logo-image"
-              />
-            </a>
+          <div className="container nav-content">
+            <div className="logo">
+              <div className="nav-left">
+                <a href="/">
+                <img 
+                  src={darkMode ? LogoDark : LogoLight} 
+                  alt="My Logo" 
+                  className="logo-image"
+                />
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div className="nav-links">
-           <div className="nav-right">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-           </div>
-          </div>
+            <div className="nav-links">
+            <div className="nav-right">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#projects">Projects</a>
+              <a href="#skills">Skills</a>
+              <a href="#contact">Contact</a>
+            </div>
+            </div>
 
-          {/* Dark Mode Toggle — moved inside nav-content so it aligns */}
-          <div className="theme-toggle">
-            <button 
-              onClick={() => setDarkMode(!darkMode)}
-              className="theme-btn"
-              >
-              <i className="fa-solid fa-toggle-on"></i>
-            </button>
-          </div>
+            {/* Dark Mode Toggle */}
+            <div className='dark_mode'>
+              <input
+                className='dark_mode_input'
+                type='checkbox'
+                id='darkmode-toggle'
+                checked={darkMode}
+                onChange={() => setDarkMode(!darkMode)}
+              />
+              <label className='dark_mode_label' for='darkmode-toggle'>
+              </label>
+            </div>        
         </div>
       </nav>
 
@@ -131,8 +133,8 @@ function App() {
       <section id="home" className="hero fade-in">
         <div className="container hero-grid">
 
-              <div className="hero-image">
-            <img src={MyPhoto} alt="Portrait" />
+          <div className="hero-image">
+            <img src="./public/My Photo/MyPic.jpeg" alt="Portrait" />
           </div>
 
           <div className="info-section">
@@ -158,7 +160,7 @@ function App() {
       <section id="about" className="about">
         <div className="container about-grid">
           <div className="about-image slide-right">
-            <img src={AboutMeIMG} alt="About Me Picture Portrait" />
+            <img src="./public/My Photo/1000115656.jpg" alt="About Me Picture Portrait" />
           </div>
           <div className="slide-left">
             <h2 className="aboutme-title">About Me</h2>
