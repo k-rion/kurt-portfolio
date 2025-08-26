@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import './Portfoliov2.css'
 
 //import image
+import MyPic from "../public/My Photo/MyPic.jpeg"
+import aboutMePic from "../public/My Photo/1000115656.jpg"
 import LogoLight from "../public/My Photo/K-removebg-preview.png"
 import LogoDark from "../public/My Photo/K__1_-removebg-preview.png" 
 import FeaturedProject from "./Components/Featured Project/FeaturedProject";
@@ -134,7 +136,7 @@ function App() {
         <div className="container hero-grid">
 
           <div className="hero-image">
-            <img src="./public/My Photo/MyPic.jpeg" alt="Portrait" />
+            <img src={MyPic} alt="Portrait" />
           </div>
 
           <div className="info-section">
@@ -160,7 +162,7 @@ function App() {
       <section id="about" className="about">
         <div className="container about-grid">
           <div className="about-image slide-right">
-            <img src="./public/My Photo/1000115656.jpg" alt="About Me Picture Portrait" />
+            <img src={aboutMePic} alt="About Me Picture Portrait" />
           </div>
           <div className="slide-left">
             <h2 className="aboutme-title">About Me</h2>
