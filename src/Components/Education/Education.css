@@ -104,7 +104,7 @@
 }
 
 .lang:hover {
-  background: #e0e7ff;
+  background: #e0e7ff28;
   transform: translateY(-3px);
 }
 
@@ -153,7 +153,7 @@
   transition: all 0.2s ease;
 }
 .tools:hover {
-  background: #e0e7ff;
+  background: #e0e7ff28;
   transform: translateY(-3px);
 }
 .tools i {

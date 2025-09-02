@@ -115,6 +115,7 @@ function FeaturedProject() {
         { name: "C#", icon: "fa-solid fa-code", color: "#9b59b6" },
         { name: "Java", icon: "fa-brands fa-java", color: "#f89820" },
         { name: "Unity", icon: "fa-brands fa-unity", color: "#000000" },
+        { name: "Figma", icon: "devicon-figma-plain", color: "#F24E1E",},
       ],
       gradient: "linear-gradient(to bottom right, #bbf7d0, #ecfdf5)",
       iconColor: "#16a34a",
@@ -128,23 +129,23 @@ function FeaturedProject() {
       icon: symposium1,
       title: "Hello World (Capstone Project)",
       description:
-        "Responsive portfolio showcasing creative work with smooth animations.",
+        "A 2D programming game that introduces the fundamentals of Java and C#, helping students bridge the gap between theory and practical application. Featuring fun and engaging gameplay with vibrant 2D art design.",
       longDescription:
-        "Built with advanced CSS animations, modern design principles and SEO optimization.",
+        "This 2D programming game is an interactive learning platform designed to teach the fundamentals of Java and C#. By solving coding challenges and engaging with creative puzzles, players bridge the gap between theory and practice while enjoying vibrant 2D visuals and fun gameplay.",
       showcaseImages: [
          symposium2, symposium3, symposium4, symposium5
       ],
       features: [
-        "Responsive Design",
-        "SEO Optimized",
-        "Smooth Animations",
-        "Fast Loading",
+        "A built-in coding console for writing, testing, and debugging code in real-time",
+        "Engaging puzzles and challenges that reinforce programming concepts  ",
+        "Lessons and hints to guide players through Java and C# fundamentals  ",
+        "Progressive levels that increase in difficulty to match player growth",
+        "A scoring and reward system to motivate continuous learning",
       ],
       tags: [
-        { name: "HTML", icon: "fa-brands fa-html5", color: "#e34f26" },
-        { name: "CSS", icon: "fa-brands fa-css3", color: "#1572b6" },
-        { name: "JavaScript", icon: "fa-brands fa-js", color: "#ffd43d" },
-        { name: "React", icon: "fa-brands fa-react", color: "#61dafb" },
+        { name: "C#", icon: "fa-solid fa-code", color: "#9b59b6" },
+        { name: "Java", icon: "fa-brands fa-java", color: "#f89820" },
+        { name: "Figma", icon: "devicon-figma-plain", color: "#F24E1E",},        
       ],
       gradient: "linear-gradient(to bottom right, #e9d5ff, #f5f3ff)",
       iconColor: "#a855f7",
