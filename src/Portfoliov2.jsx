@@ -68,7 +68,7 @@ function App() {
     }, []);
 
     // Toggle Light and Dark
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
       if (darkMode) {
