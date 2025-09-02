@@ -214,7 +214,7 @@
     font-size: 1.5rem;
   }
   .education-grid {
-    grid-template-columns: 1fr; /* stack everything */
+    grid-template-columns: 1fr;
   }
 }
 
