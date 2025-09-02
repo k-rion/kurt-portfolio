@@ -158,19 +158,6 @@ function FeaturedProject() {
   const [selectedProject, setSelectedProject] = useState(null);
   const closeModal = () => setSelectedProject(null);
 
-
-    const [zoomedImage, setIsZoomed] = useState(false);
-    const handleImageCLick = (img) => {
-        setIsZoomed(img);
-    }
-    const handleImageClose = () => {
-        setIsZoomed(null);
-    }
-    const handleClose = () => {
-    setIsZoomed(null);
-    };
-
-
   return (
     <section id="projects" className="projects fade-in">
       <div className="container text-center">
@@ -264,7 +251,6 @@ function FeaturedProject() {
                      <img 
                      className="showcase-img"
                      key={i} 
-                    onClick={() => handleImageCLick(img)}
                      src={img} 
                      alt={`Project Showcase ${i + 1}`} 
                      />
@@ -319,19 +305,6 @@ function FeaturedProject() {
           </div>
         )}
 
-
-        {zoomedImage && (
-          <div 
-          className="overlay"
-          onClick={handleImageClose}
-          >
-              <button className="zoomed-close-btn" onClick={handleClose}>
-            ✕
-          </button>
-            <img src={zoomedImage} alt="Zoomed" className="zoomed-image"/>
-
-          </div>
-        )} 
 
       </div>
     </section>

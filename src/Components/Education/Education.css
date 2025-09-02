@@ -200,6 +200,72 @@
   white-space: nowrap;
 }
 
+.cert-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cert-btn:hover {
+  text-decoration: underline;
+  color: #1d4ed8; /* nice blue highlight */
+}
+
+.modal-overlay-edu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content-edu {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content-edu img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.close-btn-edu {
+  position: absolute;
+
+  margin-left: 2rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  background: transparent;
+}
+
+.close-btn-edu i {
+  font-size: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.close-btn-edu:hover {
+  background: #dc2626;
+}
+
 @media (max-width: 768px) {
   .section-header h2 {
     font-size: 2rem;

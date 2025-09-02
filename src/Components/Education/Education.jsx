@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Education.css";
 
+// import your actual certificate images
+import certReact from "../../Certificates/simple learn certificate.png"
+import certInternship from "../../Certificates/Certificate of Completion (Lamina Studios).png"
+import certResearch from "../../Certificates/Symposium Presenter Certificate.jpeg"
+import certSAP from "../../Certificates/SAP Certificate.jpeg"
+
 function Education() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const certifications = [
+    {
+      title:
+        "Completion for ReactJS for Beginner Certificate, SimpliLearn | SkillUP",
+      date: "July 28, 2025",
+      image: certReact,
+    },
+    {
+      title: "486-Hour Internship Certificate, Lamina Studios, LLC",
+      date: "May 12, 2025",
+      image: certInternship,
+    },
+    {
+      title:
+        "Research Presenter, STI Research Symposium – “Hello World: A 2D Cross Platform Java and C# Programming Game”",
+      date: "Dec 2024",
+      image: certResearch,
+    },
+    {
+      title: "SAP Business One, Systems Integration & Architecture Training",
+      date: "March 2023",
+      image: certSAP,
+    },
+  ];
+
   return (
     <section id="education" className="education-section">
       <div className="container fade-in">
@@ -23,32 +56,34 @@ function Education() {
                 </div>
                 <span className="date">2021 - 2025</span>
               </div>
-              <p>Specializing in Game Development, UI/UX, and Web Development</p>
+              <p>
+                Specializing in Game Development, UI/UX, and Web Development
+              </p>
             </div>
 
             <div className="card">
-                <div className="card-header">
-                  <div>
-                    <h4>Tools Used</h4>
-                    <div className="tools-used">
-                      <div className="tools">
-                        <i class="devicon-visualstudio-plain colored"></i>
-                        <span>Visual Studio</span>
-                      </div>
+              <div className="card-header">
+                <div>
+                  <h4>Tools Used</h4>
+                  <div className="tools-used">
+                    <div className="tools">
+                      <i className="devicon-visualstudio-plain colored"></i>
+                      <span>Visual Studio</span>
+                    </div>
 
-                      <div className="tools">
-                        <i class="devicon-vscode-plain colored"></i>
-                        <span>Visual Studio Code</span>
-                      </div>
+                    <div className="tools">
+                      <i className="devicon-vscode-plain colored"></i>
+                      <span>Visual Studio Code</span>
+                    </div>
 
-                      <div className="tools">
-                        <i className="fa-brands fa-unity"></i>
-                        <span>Unity</span>
-                      </div>
+                    <div className="tools">
+                      <i className="fa-brands fa-unity"></i>
+                      <span>Unity</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
 
           {/* Certifications & Skills */}
@@ -56,39 +91,22 @@ function Education() {
             <h3>Certifications & Skills</h3>
             <div className="card">
               <ul className="cert-list">
-                <li>
-                  <div>
-                    <span className="bullet"></span>
-                    Completion for ReactJS for Beginner Certificate, SimpliLearn | SkillUP
-                  </div>
-                  <span className="cert-date">July 28, 2025</span>
-                </li>
-                <li>
-                  <div>
-                    <span className="bullet"></span>
-                    486-Hour Internship Certificate, Lamina Studios, LLC
-                  </div>
-                  <span className="cert-date">May 12, 2025</span>
-                </li>
-                <li>
-                  <div>
-                    <span className="bullet"></span>
-                    Research Presenter, STI Research Symposium – <br />
-                    “Hello World: A 2D Cross Platform Java and C# Programming Game”
-                  </div>
-                  <span className="cert-date">Dec 2024</span>
-                </li>
-                <li>
-                  <div>
-                    <span className="bullet"></span>
-                    SAP Business One, Systems Integration & Architecture Training
-                  </div>
-                  <span className="cert-date">March 2023</span>
-                </li>
+                {certifications.map((cert, index) => (
+                  <li key={index}>
+                    <div>
+                      <button
+                        className="cert-btn"
+                        onClick={() => setSelectedImage(cert.image)}
+                      >
+                        {cert.title}
+                      </button>
+                    </div>
+                    <span className="cert-date">{cert.date}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Languages */}
             <div className="card">
               <h4>Programming Languages</h4>
               <div className="prog-languages">
@@ -117,15 +135,32 @@ function Education() {
                   <span>React</span>
                 </div>
                 <div className="lang">
-                  <i className="fa-brands fa- fa-js"></i>
+                  <i className="fa-brands fa-js"></i>
                   <span>Javascript</span>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div className="modal-overlay-edu" onClick={() => setSelectedImage(null)}>
+          <div
+            className="modal-content-edu"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img src={selectedImage} alt="Certificate" />
+            <button
+              className="close-btn-edu"
+              onClick={() => setSelectedImage(null)}
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

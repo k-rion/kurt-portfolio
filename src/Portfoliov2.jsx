@@ -167,13 +167,7 @@ function App() {
           <div className="slide-left">
             <h2 className="aboutme-title">About Me</h2>
             <p className="aboutme-sub">
-              I'm a passionate web designer and developer game developer to 
-              creating digital solutions that make a difference.
-            </p>
-            <p className="aboutme-sub">
-              When I'm not coding or designing, you'll find me exploring new
-              technologies, reading design blogs, or enjoying coffee while
-              sketching new ideas.
+              As a developer with expertise in both web and game design, I specialize in creating engaging and immersive digital experiences. My unique perspective allows me to build dynamic applications with a strong emphasis on user interaction and narrative.
             </p>
           </div>
         </div>
@@ -202,3 +196,4 @@ function App() {
 }
 
 export default App
+
