@@ -24,9 +24,14 @@ import SAS4 from "../../Project2_StealAndStealth/Saturday_GameDev_Designing_Leve
 import SAS5 from "../../Project2_StealAndStealth/Thursday_GameDev.png"
 import SAS6 from "../../Project2_StealAndStealth/Tuesday_GameDev4.png"
 
+//Todo List App
+import TodoList from "../../Todo_App/Screenshot 2025-09-01 102701.png"
+import TodoList2 from "../../Todo_App/Screenshot 2025-09-01 102802.png"
+import TodoList3 from "../../Todo_App/Screenshot 2025-09-01 102825.png"
+
 function FeaturedProject() {
   const projects = [
-      // ClickNcart Project
+    // ClickNcart Project
     {
       icon: clickncart1,
       title: "ClickNcart (First Web Project)",
@@ -54,6 +59,36 @@ function FeaturedProject() {
       iconColor: "#3b82f6",
       status: "In Progress",
     },
+
+     // Todo List App
+    {
+      icon: TodoList,
+      title: "Todo List App",
+      description:
+        "A simple and intuitive To-Do List app that helps you stay organized and productive. Easily add, edit, and check off tasks, set priorities, and manage your daily goals all in one place.",
+      longDescription:
+        "Stay on top of your tasks with this lightweight To-Do List app. Keep track of what needs to be done, organize your day, and boost productivity with a clean and simple interface.",
+      showcaseImages: [
+        TodoList2, TodoList3
+      ],
+      title2_sub:
+        "This project is a simple To-Do List app built to help users stay organized and productive. It allows you to easily add, edit, and check off tasks while keeping your daily goals clear and manageable.",
+      features: [
+        "Add, edit, and delete tasks easily",
+        "Mark tasks as completed",
+        "Simple and user-friendly interface",
+        "Task organization for better productivity",
+        "Lightweight and responsive design",
+      ],
+      tags: [
+        { name: "React", icon: "fa-brands fa-react", color: "#61dafb" },
+        { name: "Tailwind", icon: "devicon-tailwindcss-original colored" },
+      ],
+      gradient: "linear-gradient(to bottom right, #dbeafe, #eff6ff)",
+      iconColor: "#3b82f6",
+      status: "Completed",
+    },
+
     // Steal and Stealth Project Section
     {
       icon: SAS,
