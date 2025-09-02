@@ -58,6 +58,8 @@ function FeaturedProject() {
       gradient: "linear-gradient(to bottom right, #dbeafe, #eff6ff)",
       iconColor: "#3b82f6",
       status: "In Progress",
+      projectLink: "https://k-rion.github.io/ClickNcart/",
+      videoLink: "",
     },
 
      // Todo List App
@@ -87,6 +89,8 @@ function FeaturedProject() {
       gradient: "linear-gradient(to bottom right, #dbeafe, #eff6ff)",
       iconColor: "#3b82f6",
       status: "Completed",
+      projectLink: "https://k-rion.github.io/TodoList/",
+      videoLink: "",
     },
 
     // Steal and Stealth Project Section
@@ -115,6 +119,7 @@ function FeaturedProject() {
       gradient: "linear-gradient(to bottom right, #bbf7d0, #ecfdf5)",
       iconColor: "#16a34a",
       status: "Completed",
+      projectLink: "",
       videoLink: "https://drive.google.com/file/d/1Rn2wyCL5KzcacdYUZ_5eZEgCqjyn2sBe/preview",
     },
     
@@ -144,6 +149,7 @@ function FeaturedProject() {
       gradient: "linear-gradient(to bottom right, #e9d5ff, #f5f3ff)",
       iconColor: "#a855f7",
       status: "Completed",
+      projectLink: "",
       videoLink: "https://drive.google.com/file/d/151lph_ZsbBtpmYkOdu5aeguLlSme9gC4/preview",
     },
   ];
@@ -296,8 +302,8 @@ function FeaturedProject() {
 
               {/* Action Buttons */}
               <div className="modal-actions">
-                <button className="github-btn">
-                  <i className="fa-brands fa-github"></i> GitHub Repo
+                <button className="github-btn" onClick={() => window.open(selectedProject.projectLink, "_blank")}>
+                  <i className="fa-solid fa-link"></i> Project Link
                 </button>
                 <button className="demo-btn" onClick={() => window.open(selectedProject.videoLink, "_blank")}>
                   <i className="fa-solid fa-up-right-from-square"></i> Live Demo
