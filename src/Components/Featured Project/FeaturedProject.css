@@ -462,6 +462,10 @@ ul li span {
     max-width: 280px;
   }
 
+  .modal {
+    margin-top: 2rem;
+  }
+
   .modal-content {
     padding: 1.2rem;
     margin: 1rem;
@@ -497,13 +501,18 @@ ul li span {
   }
   .zoom-close {
     top: 10px;
-    right: 12px;
+    right: -20px;
     height: 36px;
     width: 36px;
   }
   .showcase-img {
     max-width: 150px;
     max-height: 110px;
+  }
+  .close-btn {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto;
   }
 }
 

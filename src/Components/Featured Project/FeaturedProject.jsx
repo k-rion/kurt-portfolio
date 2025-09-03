@@ -236,7 +236,7 @@ function FeaturedProject() {
         </div>
 
         {/* Modal */}
-        {openImage && (
+        {openImage && ReactDOM.createPortal (
           <div className="modal" onClick={closeModal}>
             <div
               className="modal-content"
@@ -327,7 +327,8 @@ function FeaturedProject() {
                 <i className="fa-solid fa-arrow-left"></i> Back to Portfolio
               </button>
             </div>
-          </div>
+          </div>,
+          document.body
         )}
       </div>
 
