@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import "./FeaturedProject.css";
 
 // imported pictures (CLickNcart)
@@ -33,19 +34,27 @@ function FeaturedProject() {
 
   const [openImage, setOpenImage] = useState(null);
   const [zoomSrc, setZoomSrc] = useState(null);
-
+  const [prevOverflow, setPrevOverflow] = useState("");
   const closeModal = () => setOpenImage(null);
 
-    // new helpers for image zoom
+  
   const openZoom = (img) => {
+    setPrevOverflow(document.body.style.overflow || "");
     setZoomSrc(img);
     // lock background scroll while zoomed
     document.body.style.overflow = "hidden";
+    window.scrollTo({top: 0, left: 0, behavior: "auto"});
   };
   const closeZoom = () => {
     setZoomSrc(null);
-    document.body.style.overflow = "";
+    document.body.style.overflow = prevOverflow || "";
   };
+
+  useEffect(() => {
+    return() => {
+      document.body.style.overflow = prevOverflow || "";
+    }
+  }, [prevOverflow])
 
   const projects = [
     // ClickNcart Project
@@ -322,13 +331,14 @@ function FeaturedProject() {
         )}
       </div>
 
-        {zoomSrc && (
+        {zoomSrc && ReactDOM.createPortal (
           <div className="overlay-zoom" onClick={closeZoom} role="dialog" arial-modal="true">
             <div className="zoom-wrap" onClick={(e) => e.stopPropagation()}>
               <button className="zoom-close" onClick={closeZoom} arial-label="Close Zoom"><i className="fa-solid fa-xmark"></i></button>
               <img src={zoomSrc} alt="Zoomed Showcase" className="zoomed-image" />
             </div>
-          </div>
+          </div>,
+          document.body
         )}
 
     </section>

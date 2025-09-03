@@ -220,6 +220,7 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
+  cursor: pointer;
 }
 
 .grid-2 {
@@ -349,44 +350,50 @@ ul li span {
 
 .zoom-wrap {
   position: relative;
-  max-width: 96%;
-  max-height: 96vh;
+  max-width: 100%;
+  max-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 12px;
 }
 
 .zoomed-image {
-  max-width: 80%;
-  max-height: calc(96vh - 40px);
+  max-width: calc(100% - 48px);
+  max-height: calc(100vh - 96px);
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
   display: block;
+  margin: 0 auto;
 }
 
 .zoom-close {
-  position: absolute;
-  top: -10px;
-  right: 50px;
+  position: fixed;
+  top: 16px;
+  right: 20px;
   background: transparent;
   color: white;
   border: none;
-  height: 36px;
-  width: 36px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 2rem;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   z-index: 12001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .zoom-close:hover {
   background: #dc2626;
   color: white;
 }
-
 .showcase-img {
   max-width: 200px;
   max-height: 140px;
@@ -473,10 +480,6 @@ ul li span {
     justify-content: center;
   }
 
-  .showcase-grid img {
-    max-width: 150px;
-  }
-
   .modal-actions {
     flex-direction: column;
     gap: 0.8rem;
@@ -489,7 +492,14 @@ ul li span {
   }
 
   .zoomed-image {
-    max-height: calc(100vh - 80px);
+    max-width: calc(100% - 32px);
+    max-height: calc(100vh - 72px);
+  }
+  .zoom-close {
+    top: 10px;
+    right: 12px;
+    height: 36px;
+    width: 36px;
   }
   .showcase-img {
     max-width: 150px;
@@ -528,11 +538,6 @@ ul li span {
     line-height: 1.5rem;
   }
 
-  .showcase-grid img {
-    max-width: 120px;
-    padding: 0.5rem;
-  }
-
   .sec2-modal-title {
     font-size: 1.1rem;
   }
@@ -547,10 +552,15 @@ ul li span {
     margin-right: 0.5rem;
   }
 
+  .zoomed-image {
+    max-width: calc(100% - 20px);
+    max-height: calc(100vh - 56px);
+  }
   .zoom-close {
-    top: 6px;
+    top: 8px;
     right: 8px;
   }
+
   .showcase-img {
     max-width: 120px;
     max-height: 90px;
