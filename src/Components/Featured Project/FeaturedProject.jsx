@@ -138,7 +138,7 @@ function FeaturedProject() {
         "Interactive Scripts",
       ],
       tags: [
-        { name: "C#", icon: "fa-solid fa-code", color: "#9b59b6" },
+        { name: "C#", icon: "devicon-csharp-plain colored"},
         { name: "Java", icon: "fa-brands fa-java", color: "#f89820" },
         { name: "Unity", icon: "fa-brands fa-unity", color: "#000000" },
         { name: "Figma", icon: "devicon-figma-plain", color: "#F24E1E",},
@@ -169,7 +169,7 @@ function FeaturedProject() {
         "A scoring and reward system to motivate continuous learning",
       ],
       tags: [
-        { name: "C#", icon: "fa-solid fa-code", color: "#9b59b6" },
+        { name: "C#", icon: "devicon-csharp-plain colored" },
         { name: "Java", icon: "fa-brands fa-java", color: "#f89820" },
         { name: "Figma", icon: "devicon-figma-plain", color: "#F24E1E",},        
       ],

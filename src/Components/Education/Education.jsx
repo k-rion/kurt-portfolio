@@ -10,6 +10,7 @@ import certSAP from "../../Certificates/SAP Certificate.jpeg"
 function Education() {
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Certification Section
   const certifications = [
     {
       title:
@@ -35,6 +36,85 @@ function Education() {
     },
   ];
 
+  // Tools Section
+  const tools = [
+    {
+      toolName: "Visual Studio",
+      toolUsed: "devicon-visualstudio-plain colored",
+    },
+    {
+      toolName: "VS Code",
+      toolUsed: "devicon-vscode-plain colored",
+    },
+    {
+      toolName: "Git",
+      toolUsed: "devicon-git-plain colored"
+    },
+    {
+      toolName: "GitHub",
+      toolUsed: "devicon-github-original",
+    },
+    {
+      toolName: "Unity",
+      toolUsed: "fa-brands fa-unity",
+    },
+    {
+      toolName: "Figma",
+      toolUsed: "devicon-figma-plain", 
+      color: "#F24E1E",
+    },
+    {
+      toolName: "Canva",
+      toolUsed: "devicon-canva-original colored",
+    },
+  ];
+
+  // Programming Languages Section
+  const progLanguage = [
+    {
+      progBrand: "fa-brands fa-java",
+      progLang: "Java",
+      progBColor: "#f89820",
+    },
+    {
+      progBrand: "devicon-tailwindcss-original colored",
+      progLang: "Tailwind",
+    },
+    {
+      progBrand: "fa-brands fa-react",
+      progLang: "React",
+      progBColor: "#61dafb",
+    },
+    {
+      progBrand: "devicon-csharp-plain colored",
+      progLang: "C#",
+    },
+    {
+      progBrand: "fa-brands fa-html5",
+      progLang: "HTML5",
+      progBColor: "#e34f26",
+    },
+    {
+      progBrand: "fa-brands fa-css3-alt",
+      progLang: "CSS",
+      progBColor: "#1572b6",
+    },
+    {
+      progBrand: "fa-brands fa-js",
+      progLang: "Javascript",
+      progBColor: "#f7df1e",
+    },
+    {
+      progBrand: "fa-brands fa-python",
+      progLang: "Python",
+      progBColor: "#3776ab",
+    },
+    {
+      progBrand: "devicon-azuresqldatabase-plain colored",
+      progLang: "SQL"
+    },
+  ];
+
   return (
     <section id="education" className="education-section">
       <div className="container fade-in">
@@ -47,7 +127,6 @@ function Education() {
           {/* Education */}
           <div className="education-block">
             <h3>Education</h3>
-
             <div className="card">
               <div className="card-header">
                 <div>
@@ -61,26 +140,21 @@ function Education() {
               </p>
             </div>
 
+            {/* Tools */}
             <div className="card">
               <div className="card-header">
                 <div>
                   <h4>Tools Used</h4>
-                  <div className="tools-used">
-                    <div className="tools">
-                      <i className="devicon-visualstudio-plain colored"></i>
-                      <span>Visual Studio</span>
+                    <div className="column-flex">
+                      {tools.map((t, index) => (
+                    <div className="tools-used" key={index}>
+                      <div className="tools">
+                        <i className={t.toolUsed} style={{color: t.color}}></i>
+                        <span>{t.toolName}</span>
+                      </div>
                     </div>
-
-                    <div className="tools">
-                      <i className="devicon-vscode-plain colored"></i>
-                      <span>Visual Studio Code</span>
+                    ))}
                     </div>
-
-                    <div className="tools">
-                      <i className="fa-brands fa-unity"></i>
-                      <span>Unity</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -107,38 +181,19 @@ function Education() {
               </ul>
             </div>
 
+            {/* Programming Section */}
             <div className="card">
               <h4>Programming Languages</h4>
-              <div className="prog-languages">
-                <div className="lang">
-                  <i className="fa-brands fa-java"></i>
-                  <span>Java</span>
+                <div className="prog-flex">
+                  {progLanguage.map((p, i) => (
+                <div className="prog-languages" key={i}> 
+                  <div className="lang">
+                    <i className={p.progBrand} style={{color: p.progBColor}}></i>
+                    <span>{p.progLang}</span>
+                  </div>
                 </div>
-                <div className="lang">
-                  <i className="fa-solid fa-code"></i>
-                  <span>C#</span>
-                </div>
-                <div className="lang">
-                  <i className="fa-brands fa-python"></i>
-                  <span>Python</span>
-                </div>
-                <div className="lang">
-                  <i className="fa-brands fa-html5"></i>
-                  <span>HTML</span>
-                </div>
-                <div className="lang">
-                  <i className="fa-brands fa-css3-alt"></i>
-                  <span>CSS</span>
-                </div>
-                <div className="lang">
-                  <i className="fa-brands fa-react"></i>
-                  <span>React</span>
-                </div>
-                <div className="lang">
-                  <i className="fa-brands fa-js"></i>
-                  <span>Javascript</span>
-                </div>
-              </div>
+                ))}  
+              </div>    
             </div>
           </div>
         </div>
