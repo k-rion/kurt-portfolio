@@ -30,6 +30,23 @@ import TodoList2 from "../../Todo_App/Screenshot 2025-09-01 102802.png"
 import TodoList3 from "../../Todo_App/Screenshot 2025-09-01 102825.png"
 
 function FeaturedProject() {
+
+  const [openImage, setOpenImage] = useState(null);
+  const [zoomSrc, setZoomSrc] = useState(null);
+
+  const closeModal = () => setOpenImage(null);
+
+    // new helpers for image zoom
+  const openZoom = (img) => {
+    setZoomSrc(img);
+    // lock background scroll while zoomed
+    document.body.style.overflow = "hidden";
+  };
+  const closeZoom = () => {
+    setZoomSrc(null);
+    document.body.style.overflow = "";
+  };
+
   const projects = [
     // ClickNcart Project
     {
@@ -155,9 +172,6 @@ function FeaturedProject() {
     },
   ];
 
-  const [selectedProject, setSelectedProject] = useState(null);
-  const closeModal = () => setSelectedProject(null);
-
   return (
     <section id="projects" className="projects fade-in">
       <div className="container text-center">
@@ -203,7 +217,7 @@ function FeaturedProject() {
                 {/* View Button */}
                 <button
                   className="view-btn"
-                  onClick={() => setSelectedProject(project)}
+                  onClick={() => setOpenImage(project)}
                 >
                   View
                 </button>
@@ -213,7 +227,7 @@ function FeaturedProject() {
         </div>
 
         {/* Modal */}
-        {selectedProject && (
+        {openImage && (
           <div className="modal" onClick={closeModal}>
             <div
               className="modal-content"
@@ -225,20 +239,20 @@ function FeaturedProject() {
                 aria-label="Close project details"
                 onClick={closeModal}
               >
-                ×
+                <i className="fa-solid fa-xmark"></i>
               </button>
 
               {/* Title + Short Description */}
               <div className="first-layer">
-                <h1 className="modal-title">{selectedProject.title}</h1>
-                <p className="modal-sub">{selectedProject.longDescription}</p>
+                <h1 className="modal-title">{openImage.title}</h1>
+                <p className="modal-sub">{openImage.longDescription}</p>
               </div>
 
               {/* Project Overview */}
-              {selectedProject.title2_sub && (
+              {openImage.title2_sub && (
                 <div className="section">
                   <h2 className="sec2-modal-title">Project Overview</h2>
-                  <p className="modal-sub">{selectedProject.title2_sub}</p>
+                  <p className="modal-sub">{openImage.title2_sub}</p>
                 </div>
               )}
 
@@ -247,12 +261,14 @@ function FeaturedProject() {
                 <h2 className="sec2-modal-title">Project Showcase</h2>
                 <div className="showcase-grid">
                   {/* Add images if available */}
-                  {selectedProject.showcaseImages?.map((img, i) => (
+                  {openImage.showcaseImages?.map((img, i) => (
                      <img 
                      className="showcase-img"
                      key={i} 
                      src={img} 
-                     alt={`Project Showcase ${i + 1}`} 
+                     alt={`Project Showcase ${i + 1}`}
+                     onClick={() => openZoom(img)}
+                     style={{curso: "zoom-in"}} 
                      />
                   ))}
                 </div>
@@ -263,7 +279,7 @@ function FeaturedProject() {
                 <div>
                   <h3 className="sec2-modal-title">Key Features</h3>
                   <ul>
-                    {selectedProject.features.map((f, i) => (
+                    {openImage.features.map((f, i) => (
                       <li key={i}>
                         <span>•</span> {f}
                       </li>
@@ -274,7 +290,7 @@ function FeaturedProject() {
                 <div>
                   <h3 className="sec2-modal-title">Technologies Used</h3>
                   <div className="tech-tags">
-                    {selectedProject.tags.map((t, i) => (
+                    {openImage.tags.map((t, i) => (
                       <span key={i} className="span-tag">
                         <i
                           className={t.icon}
@@ -289,10 +305,10 @@ function FeaturedProject() {
 
               {/* Action Buttons */}
               <div className="modal-actions">
-                <button className="github-btn" onClick={() => window.open(selectedProject.projectLink, "_blank")}>
+                <button className="github-btn" onClick={() => window.open(openImage.projectLink, "_blank")}>
                   <i className="fa-solid fa-link"></i> Project Link
                 </button>
-                <button className="demo-btn" onClick={() => window.open(selectedProject.videoLink, "_blank")}>
+                <button className="demo-btn" onClick={() => window.open(openImage.videoLink, "_blank")}>
                   <i className="fa-solid fa-up-right-from-square"></i> Live Demo
                 </button>
               </div>
@@ -304,9 +320,17 @@ function FeaturedProject() {
             </div>
           </div>
         )}
-
-
       </div>
+
+        {zoomSrc && (
+          <div className="overlay-zoom" onClick={closeZoom} role="dialog" arial-modal="true">
+            <div className="zoom-wrap" onClick={(e) => e.stopPropagation()}>
+              <button className="zoom-close" onClick={closeZoom} arial-label="Close Zoom"><i className="fa-solid fa-xmark"></i></button>
+              <img src={zoomSrc} alt="Zoomed Showcase" className="zoomed-image" />
+            </div>
+          </div>
+        )}
+
     </section>
   );
 }
