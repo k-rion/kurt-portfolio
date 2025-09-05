@@ -403,6 +403,15 @@ ul li span {
   border-radius: 8px;
 }
 
+.note-text {
+  color: #dc2626;
+  margin: auto;
+}
+
+.note-modal ul li {
+  font-size: 0.5rem;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
