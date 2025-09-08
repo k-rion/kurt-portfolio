@@ -111,7 +111,10 @@
 .project-status.completed {
   background-color: #16a34a;
 }
-
+.project-status.done {
+  background-color: #16a34a;
+  text-align: center;
+}
 .project-status.in-progress {
   background-color: #dc2626;
 }

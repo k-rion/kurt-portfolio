@@ -62,7 +62,7 @@ function FeaturedProject() {
     // Todo List App
     {
       icon: TodoList,
-      title: "Todo List App",
+      title: "Task App",
       description:
         "A simple and intuitive To-Do List app that helps you stay organized and productive. Easily add, edit, and check off tasks, set priorities, and manage your daily goals all in one place.",
       longDescription:
@@ -85,7 +85,6 @@ function FeaturedProject() {
       iconColor: "#3b82f6",
       status: "Completed",
       projectLink: "https://k-rion.github.io/TodoList/",
-      videoLink: "",
     },
 
     // Steal and Stealth Project Section
@@ -113,7 +112,6 @@ function FeaturedProject() {
       gradient: "linear-gradient(to bottom right, #bbf7d0, #ecfdf5)",
       iconColor: "#16a34a",
       status: "Completed",
-      projectLink: "",
       videoLink:
         "https://drive.google.com/file/d/1Rn2wyCL5KzcacdYUZ_5eZEgCqjyn2sBe/preview",
     },
@@ -142,18 +140,17 @@ function FeaturedProject() {
       gradient: "linear-gradient(to bottom right, #e9d5ff, #f5f3ff)",
       iconColor: "#a855f7",
       status: "Completed",
-      projectLink: "",
       videoLink:
         "https://drive.google.com/file/d/151lph_ZsbBtpmYkOdu5aeguLlSme9gC4/preview",
     },
     // StreamX (MovieList) Project
     {
       icon: MovieL,
-      title: "StreamX (Movie List)",
+      title: "StreamX",
       description:
         "StreamX is a modern movie listing platform that allows users to browse, search, and explore the latest films with an elegant and user-friendly interface.",
       longDescription:
-        "StreamX is a developing movie streaming and listing web app that dynamically fetches and displays films with posters, covers, ratings, and detailed banners in a cinematic layout.",
+        "I created this movie list project to enhance my skills in Tailwind CSS, React, and working with APIs. StreamX is a developing movie streaming and listing web app that dynamically fetches and displays films with posters, covers, ratings, and detailed banners in a cinematic layout. This project includes some functionality to help me improve my skills, but it is just a sample project and is not yet fully complete.",
       showcaseImages: [MovieL, MovieL2],
       title2_sub:
         "A movie discovery website featuring trending films, detailed movie banners, and smooth navigation — built for a modern streaming experience. While still in progress, it already includes trending titles, genre navigation, and search, with upcoming features like smooth transitions, pagination, and an enhanced watchlist.",
@@ -170,28 +167,24 @@ function FeaturedProject() {
       ],
       gradient: "linear-gradient(to bottom right, #dbeafe, #eff6ff)",
       iconColor: "#3b82f6",
-      status: "In Progress",
+      status: "Done",
       projectLink: "https://k-rion.github.io/Movie-List/",
-      videoLink: "",
-      note: "This project is still in development, so some features may not be final. When opening the project link, make sure to click the Home navbar to view the website’s posters and covers properly",
     },
 
     // ClickNCart Project
     {
       icon: clickncart1,
-      title: "ClickNcart (First Web Project)",
+      title: "ClickNcart",
       description:
         "Modern shopping experience with clean UI and seamless checkout process.",
       longDescription:
-        "A comprehensive e-commerce solution built with modern web technologies. This platform features a clean, intuitive interface that makes online shopping effortless for users while providing powerful management tools for administrators.",
+        "A comprehensive e-commerce solution built with modern web technologies. This project was created to practice my skills in HTML and CSS, so some pages are unavailable. It features a clean, intuitive interface designed to make online shopping effortless for users while providing powerful management tools for administrators.",
       showcaseImages: [clickncart2, clickncart3, clickncart4, clickncart5],
       title2_sub:
-        "This project features a user-friendly interface for an e-commerce platform, designed to deliver a smooth and enjoyable shopping experience. The clean and minimalist layout helps users focus on products without unnecessary distractions. With intuitive navigation and clear product displays, it ensures convenience and efficiency for customers. Overall, the design enhances engagement while maintaining a modern and professional look.",
+        "This project features a user-friendly interface for an e-commerce platform, designed to deliver a smooth and enjoyable shopping experience. The clean and minimalist layout helps users focus on products without unnecessary distractions.",
       features: [
         "Responsive Design",
-        "Payment Integration",
         "Admin Dashboard",
-        "Real-time Analytics",
       ],
       tags: [
         { name: "React", icon: "fa-brands fa-react", color: "#61dafb" },
@@ -200,10 +193,9 @@ function FeaturedProject() {
       ],
       gradient: "linear-gradient(to bottom right, #dbeafe, #eff6ff)",
       iconColor: "#3b82f6",
-      status: "In Progress",
+      status: "Done",
+      note: "it is currently designed for web only (not yet optimized for small-screen devices).",
       projectLink: "https://k-rion.github.io/ClickNcart/",
-      videoLink: "",
-      note: "This project is still in development, so some features may not be final."
     },
   ];
 
@@ -359,13 +351,15 @@ function FeaturedProject() {
                   >
                     <i className="fa-solid fa-link"></i> See Project Here!
                   </button>
-                  <button
-                    className="demo-btn"
-                    onClick={() => window.open(openImage.videoLink, "_blank")}
-                  >
-                    <i className="fa-solid fa-up-right-from-square"></i> Live
-                    Demo
-                  </button>
+
+                  {openImage.videoLink && (
+                    <button
+                      className="demo-btn"
+                      onClick={() => window.open(openImage.videoLink, "_blank")}
+                    >
+                      <i className="fa-solid fa-up-right-from-square"></i> Video
+                    </button>
+                  )}
                 </div>
 
                 {/* Back Button */}
