@@ -34,6 +34,12 @@ import TodoList3 from "../../Todo_App/Screenshot 2025-09-01 102825.png";
 import MovieL from "../../MovieList/M1.png";
 import MovieL2 from "../../MovieList/M2.png";
 
+// WeatherForecast App
+import WFA from "../../WeatherForecastApp/1.png";
+import WFA2 from "../../WeatherForecastApp/2.png";
+import WFA3 from "../../WeatherForecastApp/3.png";
+import WFA4 from "../../WeatherForecastApp/4.png";
+
 function FeaturedProject() {
   const [openImage, setOpenImage] = useState(null);
   const [zoomSrc, setZoomSrc] = useState(null);
@@ -170,6 +176,35 @@ function FeaturedProject() {
       status: "Done",
       projectLink: "https://k-rion.github.io/Movie-List/",
     },
+
+    // WeatherForecastApp Project
+  {
+    icon: WFA,
+    title: "Weather Forecast App",
+    description:
+      "Get real-time weather updates and forecasts right at your fingertips. Simple, clean, and always up-to-date.",
+    longDescription:
+      "This project was built using the OpenWeatherMap API as part of my journey to explore and study API integration. It helped me practice making API calls, handling live data, and enhancing my skills in modern web development.",
+    showcaseImages: [WFA2, WFA3, WFA4],
+    title2_sub:
+      "The Weather Forecast App delivers accurate weather conditions and forecasts tailored to your location through a clean and intuitive interface. Whether you're planning your day, a weekend trip, or just checking if you’ll need an umbrella, this app has you covered.",
+    features: [
+      "Real-time current weather conditions (temperature, humidity, wind speed)",
+      "Short-term forecast (hourly/daily)",
+      "Clean, minimal UI for ease of use",
+      "Responsive design for desktops, tablets, and mobile devices",
+      "Automatically adjusts based on user’s location",
+      "Simple navigation — all weather data is easy to access",
+    ],
+    tags: [
+      { name: "React", icon: "fa-brands fa-react", color: "#61dafb" },
+      { name: "Tailwind", icon: "devicon-tailwindcss-original colored" },
+    ],
+    gradient: "linear-gradient(to bottom right, #dbeafe, #eff6ff)",
+    iconColor: "#3b82f6",
+    status: "Done",
+    projectLink: "https://k-rion.github.io/Weather-Forecast-App/",
+  },
 
     // ClickNCart Project
     {
